@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Lista de Usuarios</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+        <td>{{ usuario.id }}</td>
+        <td>{{ usuario.nombre }}</td>
+        <td>{{ usuario.email }}</td>
+        <td>
+          <!-- Botones para editar y eliminar -->
+          <button (click)="editarUsuario(usuario)" class="btn btn-warning">Editar</button>
+          <button (click)="eliminarUsuario(usuario.id)" class="btn btn-danger">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
